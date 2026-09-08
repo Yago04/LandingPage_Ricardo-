@@ -1,0 +1,1255 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+<style>
+  @layer base {
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif !important;
+    }
+    body { overscroll-behavior: none; }
+    main > :first-child { margin-top: 0 !important; }
+    main > :last-child { margin-bottom: 0 !important; }
+    * { font-family: 'Open Sans', sans-serif !important; }
+  }
+
+  ::-webkit-scrollbar { display: none; }
+
+  /* Hero Responsive Background */
+  .hero-bg-responsive {
+    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxHWtsGhA-WbgXvo9OXQCajup-hh8AmsXQNp8Fua0n7aWDFvtlu3X0VghCGKnzOmKBnA-F3znGgiXV53NyGURlgKJdiG7DZ-LF0iqQ66Y9w8uzWku0QmgMw6M0ygoBr-LCquJvk6T0BmbrGusi4GpnkXFyOliGvWLnDIsKd5WIk5X_bD8vYuwgrWFO31vzdyuZsPUZ3gfB1LLtdV9VkcmwTvZ8Idv9ohHIH3BNBNmQfZFTx8CkRP-V-jB6g97nYjx2lg');
+    background-size: cover;
+    background-position: center top;
+  }
+  @media (max-width: 768px) {
+    .hero-bg-responsive {
+      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDcEcEqxB4CwZSFrUjRziufedXI0gi2cRueCtryDLVff8xIbv_YrxparZmWr-vBtu4IA31KqZxKWHzxb03c3rurfLQ32MwsUCZNV7uIjA_OrftBBjlqj1u1bie9fJA2_m898oO6Zm9gAsMRLcROA3EbiidoXt6tLmqZS6sLcl_FaI0uw-PPooHz5X--qtMW1qj331sf2JiSoye-sDI4RZjKhhCN6m3ppsxOUWG5pBCYRstIy0PHhhmahpeA2AwGMJD9tA');
+      background-size: cover;
+      background-position: center top;
+    }
+  }
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-primary-fixed": "#131a33",
+          "surface-base": "#090D16",
+          "on-secondary": "#412d00",
+          "text-muted": "#64748B",
+          "surface-container-highest": "#31353f",
+          "inverse-on-surface": "#2c303a",
+          "text-primary": "#F8FAFC",
+          "border-slate-subtle": "rgba(148, 163, 184, 0.12)",
+          "on-secondary-container": "#dab36a",
+          "on-background": "#dfe2ef",
+          "tertiary-fixed-dim": "#bcc7de",
+          "surface-dim": "#0f131c",
+          "error": "#ffb4ab",
+          "surface-card": "#131E3A",
+          "primary-fixed-dim": "#bec5e5",
+          "outline-variant": "#45464d",
+          "on-secondary-fixed-variant": "#5d4201",
+          "surface": "#0f131c",
+          "surface-variant": "#31353f",
+          "surface-tint": "#bec5e5",
+          "primary-container": "#0b132b",
+          "inverse-surface": "#dfe2ef",
+          "error-container": "#93000a",
+          "tertiary": "#bcc7de",
+          "on-tertiary-fixed-variant": "#3c475a",
+          "on-primary-fixed-variant": "#3e4660",
+          "surface-container": "#1c1f29",
+          "surface-raised": "#0F172A",
+          "on-tertiary-container": "#747f95",
+          "secondary-fixed-dim": "#e9c176",
+          "on-error": "#690005",
+          "secondary-fixed": "#ffdea5",
+          "secondary": "#e9c176",
+          "on-surface-variant": "#c6c6ce",
+          "primary-fixed": "#dbe1ff",
+          "surface-bright": "#353943",
+          "surface-container-lowest": "#0a0e17",
+          "gold-bright": "#D4AF37",
+          "on-surface": "#dfe2ef",
+          "primary": "#bec5e5",
+          "secondary-container": "#604403",
+          "surface-container-low": "#181b25",
+          "on-tertiary": "#263143",
+          "surface-container-high": "#262a34",
+          "on-secondary-fixed": "#261900",
+          "outline": "#909098",
+          "on-tertiary-fixed": "#111c2d",
+          "on-error-container": "#ffdad6",
+          "tertiary-fixed": "#d8e3fb",
+          "tertiary-container": "#091526",
+          "text-secondary": "#94A3B8",
+          "on-primary": "#282f49",
+          "on-primary-container": "#767e9b",
+          "gold-muted": "#8C7139",
+          "inverse-primary": "#565d79",
+          "gold-antique": "#C5A059",
+          "border-gold-subtle": "rgba(197, 160, 89, 0.22)",
+          "background": "#0f131c"
+        },
+        borderRadius: {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        spacing: {
+          "container-max": "1200px",
+          "unit-xs": "0.5rem",
+          "unit-md": "1rem",
+          "unit-4xl": "6rem",
+          "unit-xl": "2rem",
+          "unit-2xl": "3rem",
+          "unit-3xl": "4rem",
+          "unit-2xs": "0.25rem",
+          "unit-lg": "1.5rem",
+          "gutter-desktop": "2rem",
+          "unit-sm": "0.75rem",
+          "gutter-mobile": "1rem"
+        },
+        fontFamily: {
+          "label-md": ["Open Sans", "sans-serif"],
+          "body-md": ["Open Sans", "sans-serif"],
+          "headline-lg": ["Open Sans", "sans-serif"],
+          "display-hero-mobile": ["Open Sans", "sans-serif"],
+          "label-caps": ["Open Sans", "sans-serif"],
+          "headline-sm": ["Open Sans", "sans-serif"],
+          "stat-counter": ["Open Sans", "sans-serif"],
+          "body-sm": ["Open Sans", "sans-serif"],
+          "display-hero": ["Open Sans", "sans-serif"],
+          "headline-lg-mobile": ["Open Sans", "sans-serif"],
+          "body-lg": ["Open Sans", "sans-serif"],
+          "title-editorial": ["Open Sans", "sans-serif"],
+          "headline-md": ["Open Sans", "sans-serif"]
+        },
+        fontSize: {
+          "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+          "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+          "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+          "display-hero-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+          "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.14em", "fontWeight": "700" }],
+          "headline-sm": ["22px", { "lineHeight": "30px", "fontWeight": "700" }],
+          "stat-counter": ["48px", { "lineHeight": "52px", "fontWeight": "800" }],
+          "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+          "display-hero": ["52px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+          "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+          "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+          "title-editorial": ["18px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+          "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "700" }]
+        }
+      }
+    }
+  };
+</script>
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-surface-base font-body-md text-on-surface selection:bg-gold-antique selection:text-surface-base">
+<!-- Header -->
+<header class="fixed top-0 w-full z-50 bg-surface-base/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.6)]">
+<div class="h-20 max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-unit-md">
+<div class="flex items-center gap-unit-md">
+<span class="flex items-center gap-unit-xs tracking-[0.08em] font-headline-sm text-headline-sm text-text-primary uppercase font-bold">
+<span class="text-gold-antique">CFO</span> PMGO
+      </span>
+<span class="hidden sm:inline-block w-px h-6 bg-surface-container-highest"></span>
+<span class="hidden sm:inline-block font-label-caps text-label-caps text-text-muted uppercase font-semibold">Prof. Ricardo Ziegler</span>
+</div>
+<nav class="hidden lg:flex items-center gap-unit-lg" data-active-classes="text-gold-antique">
+<a aria-current="page" class="font-label-caps transition-colors text-gold-antique font-semibold text-xs uppercase tracking-[0.1em]" data-path="pre-edital-cfo-pmgo" href="#">Visão Geral</a>
+<a class="font-label-caps text-xs uppercase tracking-[0.1em] text-on-surface-variant hover:text-on-surface transition-colors font-semibold" data-path="metodologia-estrategica" href="#">Metodologia</a>
+<a class="font-label-caps text-xs uppercase tracking-[0.1em] text-on-surface-variant hover:text-on-surface transition-colors font-semibold" data-path="quadro-docente-e-conteudo" href="#">Conteúdo</a>
+<a class="font-label-caps text-xs uppercase tracking-[0.1em] text-on-surface-variant hover:text-on-surface transition-colors font-semibold" data-path="matricula-e-planos" href="#oferta">Inscrição</a>
+</nav>
+<div class="flex items-center gap-unit-md">
+<a class="px-unit-md py-unit-xs bg-gold-antique hover:bg-gold-bright text-surface-base hover:text-surface-base font-label-caps text-label-caps tracking-[0.08em] uppercase rounded-lg transition-colors duration-200 shadow-[0_4px_16px_rgba(197,160,89,0.2)] text-center whitespace-nowrap font-bold inline-flex items-center gap-2" data-path="matricula-e-planos" href="#oferta">Quero Garantir Minha Vaga <i class="bi bi-arrow-right text-[1.2em]"></i></a>
+<img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-gold-antique/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc-RRJKlbmX-RPLcvOvlDUWRhXcVi7Udyvx4zG2258VHIGgOBZvo7baY_-qH2A5rxDE2Km70wqerLmbvz5R_X2eylBhk5oNipDTj6BrPU6B_KOUkJsJixHjm_Uf1AEJM3pDbaNpAN-QNhC0-3ODQfax-fn02pz5xO22R1Oxn7WTTaP4X80N_eeetQkwtS-NhhygckRN5O1Afm-Y8wen-YFlIlabAiL_OUjvVzrPwWjNATdJqjmHrBJLysQ6aM2xPQWQw">
+</div>
+</div>
+</header>
+<main class="w-full pt-20 bg-surface-base">
+<div class="flex flex-col w-full">
+<!-- 01 — HERO + VSL (com imagens de background enviadas: desktop e mobile) -->
+<section class="relative w-full overflow-hidden py-unit-3xl lg:py-unit-4xl hero-bg-responsive">
+<!-- Sutil overlay para garantir contraste e legibilidade impecáveis -->
+<div class="absolute inset-0 bg-gradient-to-b from-surface-base/95 via-surface-base/80 to-surface-base pointer-events-none"></div>
+<div class="absolute inset-0 bg-radial from-gold-antique/10 via-transparent to-surface-base/90 pointer-events-none"></div>
+<div class="relative max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col items-center text-center">
+<div class="inline-flex items-center gap-unit-xs px-unit-sm py-unit-2xs bg-surface-base/90 border border-gold-antique/30 text-gold-antique rounded-lg mb-unit-lg shadow-lg backdrop-blur-md">
+<i class="bi bi-shield text-[16px]"></i>
+<span class="font-label-caps text-label-caps uppercase tracking-[0.14em] font-bold">Preparação de Alta Patente</span>
+</div>
+<h1 class="font-display-hero text-headline-lg lg:text-display-hero text-text-primary tracking-tight max-w-4xl font-extrabold uppercase">
+      CFO | PMGO <span class="text-gold-antique">PRÉ-EDITAL</span>
+</h1>
+<p class="mt-unit-md max-w-2xl font-body-lg text-body-lg text-text-secondary leading-relaxed">
+      <span class="inline-block animate-pulse text-gold-antique font-bold text-[1.1em]">12 semanas</span> de preparação com o método que levou Ricardo Ziegler ao 1º lugar no CFO PMDF.
+    </p>
+<!-- VSL Wrapper (16:9 Aspect Ratio) -->
+<div class="w-full max-w-4xl mt-unit-2xl">
+<div class="relative w-full aspect-video rounded-xl bg-surface-raised/90 backdrop-blur-md p-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-gold-antique/20">
+<div class="w-full h-full rounded-lg bg-surface-container-lowest flex flex-col items-center justify-center relative overflow-hidden group cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-base via-surface-container-lowest/80 to-transparent"></div>
+<!-- Elegant Video Placeholder Elements -->
+<div class="relative z-10 flex flex-col items-center gap-unit-md text-center px-unit-md">
+<div class="w-16 h-16 rounded-full bg-gold-antique/15 border border-gold-antique/40 flex items-center justify-center text-gold-bright transition-transform duration-300 group-hover:scale-110 shadow-[0_0_30px_rgba(197,160,89,0.3)]">
+<i class="bi bi-play-fill text-3xl"></i>
+</div>
+<div class="space-y-unit-2xs">
+<span class="font-label-caps text-label-caps text-gold-muted uppercase tracking-[0.14em] font-bold">[INSERIR VSL CFO PMGO]</span>
+<p class="font-headline-sm text-headline-sm text-text-primary font-bold">Diretriz Estratégica • Convocação Pré-Edital</p>
+</div>
+</div>
+<!-- Subtle Grid Background -->
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:16px_16px]"></div>
+</div>
+</div>
+</div>
+<!-- Primary CTA -->
+<div class="mt-unit-2xl flex flex-col items-center">
+<a class="px-unit-2xl py-unit-md bg-gold-antique hover:bg-gold-bright text-surface-base font-label-caps text-label-caps tracking-[0.14em] uppercase rounded-lg shadow-[0_8px_24px_rgba(197,160,89,0.25)] transition-all duration-300 hover:-translate-y-0.5 font-bold text-center inline-flex items-center justify-center gap-2" href="#oferta">
+        QUERO GARANTIR MINHA VAGA <i class="bi bi-arrow-right text-[1.2em]"></i>
+      </a>
+</div>
+</div>
+</section>
+<!-- 02 — ESTRUTURA COMPLETA -->
+<section class="w-full py-unit-3xl lg:py-unit-4xl bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="max-w-2xl mb-unit-3xl text-left">
+<div class="inline-flex items-center gap-unit-xs mb-unit-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-gold-antique"></span>
+<span class="font-label-caps text-label-caps text-gold-antique uppercase tracking-[0.14em] font-bold">ESTRUTURA COMPLETA</span>
+</div>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-text-primary tracking-tight font-bold">TUDO QUE VOCÊ TERÁ ACESSO</h2>
+<p class="mt-unit-xs font-body-md text-body-md text-text-secondary leading-relaxed">Um ecossistema metodológico completo concebido para eliminar atalhos ineficazes e maximizar seu rendimento.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-unit-xl">
+<!-- 01 Missões Diárias -->
+<div class="group relative p-unit-xl bg-surface-raised rounded-xl border border-border-gold-subtle hover:border-gold-antique/50 transition-all duration-300 hover:-translate-y-0.5 shadow-lg flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-gold-antique/5 rounded-full blur-2xl pointer-events-none transition-opacity group-hover:opacity-100 opacity-40"></div>
+<div>
+<div class="flex items-center justify-between mb-unit-lg">
+<div class="w-12 h-12 rounded-xl bg-surface-container border border-gold-antique/20 flex items-center justify-center text-gold-antique group-hover:text-gold-bright group-hover:scale-105 transition-all shadow-sm">
+<i class="bi bi-flag text-2xl"></i>
+</div>
+<span class="font-label-caps text-[12px] font-bold text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded tracking-[0.14em] uppercase">01 / ROTA ATIVA</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-unit-xs font-bold tracking-tight">Missões Diárias</h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">Uma rota diária dizendo exatamente o que estudar em cada momento da preparação. Sem dispersão ou dúvidas ao abrir os livros.</p>
+</div>
+<div class="mt-unit-xl pt-unit-md border-t border-surface-container-highest/60 flex items-center justify-between text-text-muted text-xs font-label-caps uppercase tracking-wider group-hover:text-gold-antique transition-colors font-semibold">
+<span>Execução contínua</span>
+<i class="bi bi-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+<!-- 02 Cronograma de Estudos -->
+<div class="group relative p-unit-xl bg-surface-raised rounded-xl border border-border-gold-subtle hover:border-gold-antique/50 transition-all duration-300 hover:-translate-y-0.5 shadow-lg flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-gold-antique/5 rounded-full blur-2xl pointer-events-none transition-opacity group-hover:opacity-100 opacity-40"></div>
+<div>
+<div class="flex items-center justify-between mb-unit-lg">
+<div class="w-12 h-12 rounded-xl bg-surface-container border border-gold-antique/20 flex items-center justify-center text-gold-antique group-hover:text-gold-bright group-hover:scale-105 transition-all shadow-sm">
+<i class="bi bi-calendar-month text-2xl"></i>
+</div>
+<span class="font-label-caps text-[12px] font-bold text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded tracking-[0.14em] uppercase">02 / PLANEJAMENTO</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-unit-xs font-bold tracking-tight">Cronograma de Estudos</h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">Organização construída a partir do método utilizado pelo Prof. Ricardo Ziegler e da análise aprofundada das exigências da prova do CFO.</p>
+</div>
+<div class="mt-unit-xl pt-unit-md border-t border-surface-container-highest/60 flex items-center justify-between text-text-muted text-xs font-label-caps uppercase tracking-wider group-hover:text-gold-antique transition-colors font-semibold">
+<span>Cronograma estratégico</span>
+<i class="bi bi-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+<!-- 03 Materiais Próprios -->
+<div class="group relative p-unit-xl bg-surface-raised rounded-xl border border-border-gold-subtle hover:border-gold-antique/50 transition-all duration-300 hover:-translate-y-0.5 shadow-lg flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-gold-antique/5 rounded-full blur-2xl pointer-events-none transition-opacity group-hover:opacity-100 opacity-40"></div>
+<div>
+<div class="flex items-center justify-between mb-unit-lg">
+<div class="w-12 h-12 rounded-xl bg-surface-container border border-gold-antique/20 flex items-center justify-center text-gold-antique group-hover:text-gold-bright group-hover:scale-105 transition-all shadow-sm">
+<i class="bi bi-book text-2xl"></i>
+</div>
+<span class="font-label-caps text-[12px] font-bold text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded tracking-[0.14em] uppercase">03 / CONTEÚDO PURO</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-unit-xs font-bold tracking-tight">Materiais Próprios</h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">Materiais produzidos para aprofundar cada conteúdo na medida necessária para o CFO, eliminando excessos teóricos sem relevância.</p>
+</div>
+<div class="mt-unit-xl pt-unit-md border-t border-surface-container-highest/60 flex items-center justify-between text-text-muted text-xs font-label-caps uppercase tracking-wider group-hover:text-gold-antique transition-colors font-semibold">
+<span>Síntese e densidade</span>
+<i class="bi bi-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+<!-- 04 Guias de Revisão -->
+<div class="group relative p-unit-xl bg-surface-raised rounded-xl border border-border-gold-subtle hover:border-gold-antique/50 transition-all duration-300 hover:-translate-y-0.5 shadow-lg flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-gold-antique/5 rounded-full blur-2xl pointer-events-none transition-opacity group-hover:opacity-100 opacity-40"></div>
+<div>
+<div class="flex items-center justify-between mb-unit-lg">
+<div class="w-12 h-12 rounded-xl bg-surface-container border border-gold-antique/20 flex items-center justify-center text-gold-antique group-hover:text-gold-bright group-hover:scale-105 transition-all shadow-sm">
+<i class="bi bi-arrow-repeat text-2xl"></i>
+</div>
+<span class="font-label-caps text-[12px] font-bold text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded tracking-[0.14em] uppercase">04 / RETENÇÃO</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-unit-xs font-bold tracking-tight">Guias de Revisão</h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">Retomada ativa semanal dos conteúdos estudados para garantir a fixação de longo prazo e retenção consistente do conhecimento.</p>
+</div>
+<div class="mt-unit-xl pt-unit-md border-t border-surface-container-highest/60 flex items-center justify-between text-text-muted text-xs font-label-caps uppercase tracking-wider group-hover:text-gold-antique transition-colors font-semibold">
+<span>Fixação ativa</span>
+<i class="bi bi-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+<!-- 05 Guias de Jurisprudência -->
+<div class="group relative p-unit-xl bg-surface-raised rounded-xl border border-border-gold-subtle hover:border-gold-antique/50 transition-all duration-300 hover:-translate-y-0.5 shadow-lg flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-gold-antique/5 rounded-full blur-2xl pointer-events-none transition-opacity group-hover:opacity-100 opacity-40"></div>
+<div>
+<div class="flex items-center justify-between mb-unit-lg">
+<div class="w-12 h-12 rounded-xl bg-surface-container border border-gold-antique/20 flex items-center justify-center text-gold-antique group-hover:text-gold-bright group-hover:scale-105 transition-all shadow-sm">
+<i class="bi bi-hammer text-2xl"></i>
+</div>
+<span class="font-label-caps text-[12px] font-bold text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded tracking-[0.14em] uppercase">05 / JULGADOS STF • STJ</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-unit-xs font-bold tracking-tight">Guias de Jurisprudência</h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">Seleção e organização cirúrgica de julgados relevantes para a preparação, essenciais para a distinção em provas de alto nível.</p>
+</div>
+<div class="mt-unit-xl pt-unit-md border-t border-surface-container-highest/60 flex items-center justify-between text-text-muted text-xs font-label-caps uppercase tracking-wider group-hover:text-gold-antique transition-colors font-semibold">
+<span>Precedentes e súmulas</span>
+<i class="bi bi-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+<!-- 06 Biblioteca -->
+<div class="group relative p-unit-xl bg-surface-raised rounded-xl border border-border-gold-subtle hover:border-gold-antique/50 transition-all duration-300 hover:-translate-y-0.5 shadow-lg flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-gold-antique/5 rounded-full blur-2xl pointer-events-none transition-opacity group-hover:opacity-100 opacity-40"></div>
+<div>
+<div class="flex items-center justify-between mb-unit-lg">
+<div class="w-12 h-12 rounded-xl bg-surface-container border border-gold-antique/20 flex items-center justify-center text-gold-antique group-hover:text-gold-bright group-hover:scale-105 transition-all shadow-sm">
+<i class="bi bi-bank text-2xl"></i>
+</div>
+<span class="font-label-caps text-[12px] font-bold text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded tracking-[0.14em] uppercase">06 / APROFUNDAMENTO</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-unit-xs font-bold tracking-tight">Biblioteca</h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">Área de suporte e aprofundamento específico para os assuntos e tópicos jurídicos em que o aluno sentir maior dificuldade técnica.</p>
+</div>
+<div class="mt-unit-xl pt-unit-md border-t border-surface-container-highest/60 flex items-center justify-between text-text-muted text-xs font-label-caps uppercase tracking-wider group-hover:text-gold-antique transition-colors font-semibold">
+<span>Aprofundamento pontual</span>
+<i class="bi bi-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+</div>
+<div class="mt-unit-3xl text-center">
+<a class="inline-flex items-center justify-center gap-2 px-unit-2xl py-unit-md bg-gold-antique hover:bg-gold-bright text-surface-base font-label-caps text-label-caps tracking-[0.14em] uppercase rounded-lg shadow-[0_4px_16px_rgba(197,160,89,0.2)] transition-all duration-300 hover:-translate-y-0.5 font-bold" href="#oferta">
+        QUERO GARANTIR MINHA VAGA <i class="bi bi-arrow-right text-[1.2em]"></i>
+      </a>
+</div>
+</div>
+</section>
+<!-- 03 — FEEDBACKS DOS ALUNOS (CORES NEGATIVADAS / FUNDO CLARO) -->
+<section class="w-full py-unit-3xl lg:py-unit-4xl bg-slate-50 text-slate-900 relative overflow-hidden border-y border-slate-200" id="feedbacks">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-unit-2xl gap-unit-md">
+<div>
+<span class="font-label-caps text-label-caps text-amber-700 uppercase tracking-[0.14em] block mb-unit-xs font-bold">FEEDBACKS DOS ALUNOS</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-slate-900 tracking-tight font-bold">A EXPERIÊNCIA DE QUEM JÁ ESTÁ NA PREPARAÇÃO</h2>
+<p class="mt-unit-xs font-body-md text-body-md text-slate-600">
+          Veja como os alunos descrevem a experiência de estudar com direção, método e acompanhamento.
+        </p>
+</div>
+<!-- Carousel Navigation Controls -->
+<div class="flex items-center gap-unit-sm">
+<button aria-label="Anterior" class="w-12 h-12 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-800 flex items-center justify-center transition-colors shadow-sm" id="fb-prev">
+<i class="bi bi-arrow-left text-lg"></i>
+</button>
+<button aria-label="Próximo" class="w-12 h-12 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-800 flex items-center justify-center transition-colors shadow-sm" id="fb-next">
+<i class="bi bi-arrow-right text-lg"></i>
+</button>
+</div>
+</div>
+<!-- Feedback Real Screenshots Carousel -->
+<div class="flex gap-unit-lg overflow-x-auto snap-x snap-mandatory scroll-smooth pb-unit-md" id="feedback-carousel" style="scrollbar-width: none;">
+<!-- Card 1: Aluna mãe 74 pontos -->
+<div class="snap-start shrink-0 w-full sm:w-[360px] md:w-[400px] flex flex-col bg-white rounded-xl overflow-hidden shadow-lg border border-slate-200">
+<div class="p-unit-md bg-slate-100/80 border-b border-slate-200 flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-amber-800 font-bold">RESULTADO • 74 PONTOS</span>
+<span class="font-body-sm text-body-sm text-slate-500 font-medium">Mensagem Real</span>
+</div>
+<div class="relative bg-slate-100 p-unit-xs flex items-center justify-center">
+<img alt="Feedback de aluna mãe que fez 74 pontos e agradece a mentoria" class="w-full h-auto object-contain rounded-lg max-h-[520px] shadow-inner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVw6kVyl_vs19bSQX6YQAE_PdwEsu6EbbVLXz6K6R5OwTT9NDbFdc9BNwKwh82Y3ph3ioPFyDZ8bTSUGXWq4dbWucaGqVVdjhClulqbkB69wxzfkVzkeTsGty6Wh69PFlrloyaAoTNognly_J2pGr67nJjQusG3_1VMcbGwiFPcjpdTzJmjg40A7cPshuHOMnT_5jCpflkPm3uJ0M3vUCJJGTJOc3c-bkqKuMeKrF-0JvYANVSLoNx9JkTTpa27y7T2Q">
+</div>
+<div class="p-unit-md bg-white">
+<p class="font-body-sm text-body-sm text-slate-700 italic">
+            "Feedback espontâneo de aluna conciliando maternidade e rotina de estudos com rendimento de excelência."
+          </p>
+</div>
+</div>
+<!-- Card 2: Aluno 70 pontos -->
+<div class="snap-start shrink-0 w-full sm:w-[360px] md:w-[400px] flex flex-col bg-white rounded-xl overflow-hidden shadow-lg border border-slate-200">
+<div class="p-unit-md bg-slate-100/80 border-b border-slate-200 flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-amber-800 font-bold">RESULTADO • 70 PONTOS</span>
+<span class="font-body-sm text-body-sm text-slate-500 font-medium">Mensagem Real</span>
+</div>
+<div class="relative bg-slate-100 p-unit-xs flex items-center justify-center">
+<img alt="Feedback de aluno com 70 pontos agradecendo a mentoria" class="w-full h-auto object-contain rounded-lg max-h-[520px] shadow-inner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyifv_GeMql5vb3EJ9yUTpfCWXGFk6Q6yW2eWMr3RbF3gSyLbpBedYKd-V_PT6d631scntK-M6SnpiA_07kNoTF7hJnTOAQPLS92xMOqLWwLjBplpdfqN45sQcdj1WXqNd9Fx2eE1nwyzMtw4DZWZBchFo0PpG7oxlXtqCLWVSmNc8H9hj-1wEFLtTToZnuC0g8h2JVGoGLY4MuEG0xyQMH6yGvjmFtIYmdNsVCg2w8TNBqSYPsni0Ifv4LR9NdzNiuw">
+</div>
+<div class="p-unit-md bg-white">
+<p class="font-body-sm text-body-sm text-slate-700 italic">
+            "Reconhecimento da objetividade do método e da assertividade nas disciplinas chave do concurso."
+          </p>
+</div>
+</div>
+<!-- Card 3: Aluno 75/80 pontos -->
+<div class="snap-start shrink-0 w-full sm:w-[360px] md:w-[400px] flex flex-col bg-white rounded-xl overflow-hidden shadow-lg border border-slate-200">
+<div class="p-unit-md bg-slate-100/80 border-b border-slate-200 flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-amber-800 font-bold">RESULTADO • 75 / 80 PONTOS</span>
+<span class="font-body-sm text-body-sm text-slate-500 font-medium">Mensagem Real</span>
+</div>
+<div class="relative bg-slate-100 p-unit-xs flex items-center justify-center">
+<img alt="Feedback de aluno que fez 75/80 pontos afirmando que a mentoria foi essencial" class="w-full h-auto object-contain rounded-lg max-h-[520px] shadow-inner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy4WkH5QQ7mpgD-duzCHhBYN5UfI9XwRhOTNRbVSK--QyflYItrem78w8erg7BsB4yoC-7dPrtZ46gKMQrRm2qGYDywRUEY9G3qYcFc0GpZDLdnUVNSF37zYcMedrQsybODY__SHg2mPtNK4IGX35gIp7UA5ucL_mdQyuVzBtPV8wZ007ueC0Za3GbtV5G_NOiHwY1NjZvu93hCpWaO1hEYSCh0KXNLts0ZEVH3bwYuTwJbSLlk4lSqza4vBUl4O86Mw">
+</div>
+<div class="p-unit-md bg-white">
+<p class="font-body-sm text-body-sm text-slate-700 italic">
+            "Rendimento de altíssimo corte comprovando a eficácia das diretrizes e acompanhamento na mentoria."
+          </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 04 — EXPERIÊNCIA DO ALUNO -->
+<section class="w-full py-unit-3xl lg:py-unit-4xl bg-surface-container-lowest overflow-hidden" id="experiencia-do-aluno">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<!-- Header / Titles -->
+<div class="max-w-2xl mb-unit-3xl">
+<div class="inline-flex items-center gap-unit-xs mb-unit-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-gold-antique"></span>
+<span class="font-label-caps text-label-caps text-gold-antique uppercase tracking-[0.14em] font-bold">EXPERIÊNCIA DO ALUNO</span>
+</div>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-text-primary tracking-tight font-bold">Progressão de aprendizado simplificado</h2>
+<p class="mt-unit-xs font-body-md text-body-md text-text-secondary leading-relaxed">Uma rotina clara, progressiva e previsível para você saber exatamente o que executar em cada etapa da preparação.</p>
+</div>
+<!-- Journey Carousel Container -->
+<div class="relative w-full overflow-hidden select-none">
+<div class="flex items-stretch transition-transform duration-500 ease-out" id="journey-track" style="transform: translateX(0%);">
+<!-- Card 01 -->
+<div class="journey-card-item shrink-0 px-unit-xs sm:px-unit-sm w-[90%] sm:w-[540px] md:w-[600px] lg:w-[640px] transition-all duration-500 opacity-100" data-step="0">
+<div class="h-full p-unit-xl lg:p-unit-2xl bg-surface-raised rounded-xl border border-gold-antique/40 shadow-2xl flex flex-col justify-between min-h-[320px] relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-36 h-36 bg-gold-antique/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-baseline justify-between border-b border-surface-container-highest/60 pb-unit-md">
+<span class="font-stat-counter text-stat-counter text-gold-antique font-extrabold leading-none select-none text-[64px] lg:text-[80px] tracking-tighter">01</span>
+<span class="font-label-caps text-[12px] font-bold text-gold-muted px-unit-sm py-1 bg-surface-container rounded uppercase tracking-[0.14em]">ETAPA INICIAL</span>
+</div>
+<div class="mt-unit-md space-y-unit-xs">
+<h3 class="font-headline-md text-headline-sm lg:text-headline-md text-text-primary tracking-tight font-bold uppercase">MISSÃO DIÁRIA</h3>
+<p class="font-body-lg text-body-md lg:text-body-lg text-text-secondary leading-relaxed">Você recebe a orientação do que estudar naquele momento da preparação com metas claras e sem hesitação.</p>
+</div>
+<div class="mt-unit-lg flex items-center gap-unit-xs text-xs font-label-caps text-gold-muted uppercase tracking-wider font-semibold">
+<i class="bi bi-check-circle-fill text-sm"></i> Roteiro claro a cada amanhecer
+            </div>
+</div>
+</div>
+<!-- Card 02 -->
+<div class="journey-card-item shrink-0 px-unit-xs sm:px-unit-sm w-[90%] sm:w-[540px] md:w-[600px] lg:w-[640px] transition-all duration-500 opacity-40" data-step="1">
+<div class="h-full p-unit-xl lg:p-unit-2xl bg-surface-raised rounded-xl border border-surface-container-highest/60 shadow-xl flex flex-col justify-between min-h-[320px] relative overflow-hidden">
+<div class="flex items-baseline justify-between border-b border-surface-container-highest/60 pb-unit-md">
+<span class="font-stat-counter text-stat-counter text-gold-antique font-extrabold leading-none select-none text-[64px] lg:text-[80px] tracking-tighter">02</span>
+<span class="font-label-caps text-[12px] font-bold text-gold-muted px-unit-sm py-1 bg-surface-container rounded uppercase tracking-[0.14em]">EXECUÇÃO</span>
+</div>
+<div class="mt-unit-md space-y-unit-xs">
+<h3 class="font-headline-md text-headline-sm lg:text-headline-md text-text-primary tracking-tight font-bold uppercase">ESTUDO DIRECIONADO</h3>
+<p class="font-body-lg text-body-md lg:text-body-lg text-text-secondary leading-relaxed">Execute a missão utilizando os materiais disponibilizados e selecionados cirurgicamente para aquele conteúdo.</p>
+</div>
+<div class="mt-unit-lg flex items-center gap-unit-xs text-xs font-label-caps text-gold-muted uppercase tracking-wider font-semibold">
+<i class="bi bi-check-circle-fill text-sm"></i> Conteúdo sintetizado e objetivo
+            </div>
+</div>
+</div>
+<!-- Card 03 -->
+<div class="journey-card-item shrink-0 px-unit-xs sm:px-unit-sm w-[90%] sm:w-[540px] md:w-[600px] lg:w-[640px] transition-all duration-500 opacity-40" data-step="2">
+<div class="h-full p-unit-xl lg:p-unit-2xl bg-surface-raised rounded-xl border border-surface-container-highest/60 shadow-xl flex flex-col justify-between min-h-[320px] relative overflow-hidden">
+<div class="flex items-baseline justify-between border-b border-surface-container-highest/60 pb-unit-md">
+<span class="font-stat-counter text-stat-counter text-gold-antique font-extrabold leading-none select-none text-[64px] lg:text-[80px] tracking-tighter">03</span>
+<span class="font-label-caps text-[12px] font-bold text-gold-muted px-unit-sm py-1 bg-surface-container rounded uppercase tracking-[0.14em]">APLICAÇÃO</span>
+</div>
+<div class="mt-unit-md space-y-unit-xs">
+<h3 class="font-headline-md text-headline-sm lg:text-headline-md text-text-primary tracking-tight font-bold uppercase">QUESTÕES</h3>
+<p class="font-body-lg text-body-md lg:text-body-lg text-text-secondary leading-relaxed">Resolva questões relacionadas ao conteúdo que acabou de estudar para mapear lacunas imediatamente.</p>
+</div>
+<div class="mt-unit-lg flex items-center gap-unit-xs text-xs font-label-caps text-gold-muted uppercase tracking-wider font-semibold">
+<i class="bi bi-check-circle-fill text-sm"></i> Validação empírica contínua
+            </div>
+</div>
+</div>
+<!-- Card 04 -->
+<div class="journey-card-item shrink-0 px-unit-xs sm:px-unit-sm w-[90%] sm:w-[540px] md:w-[600px] lg:w-[640px] transition-all duration-500 opacity-40" data-step="3">
+<div class="h-full p-unit-xl lg:p-unit-2xl bg-surface-raised rounded-xl border border-surface-container-highest/60 shadow-xl flex flex-col justify-between min-h-[320px] relative overflow-hidden">
+<div class="flex items-baseline justify-between border-b border-surface-container-highest/60 pb-unit-md">
+<span class="font-stat-counter text-stat-counter text-gold-antique font-extrabold leading-none select-none text-[64px] lg:text-[80px] tracking-tighter">04</span>
+<span class="font-label-caps text-[12px] font-bold text-gold-muted px-unit-sm py-1 bg-surface-container rounded uppercase tracking-[0.14em]">CONSOLIDAÇÃO</span>
+</div>
+<div class="mt-unit-md space-y-unit-xs">
+<h3 class="font-headline-md text-headline-sm lg:text-headline-md text-text-primary tracking-tight font-bold uppercase">REVISÃO</h3>
+<p class="font-body-lg text-body-md lg:text-body-lg text-text-secondary leading-relaxed">Retome semanalmente os conteúdos já estudados através de blocos ativos para sedimentar a memória de longo prazo.</p>
+</div>
+<div class="mt-unit-lg flex items-center gap-unit-xs text-xs font-label-caps text-gold-muted uppercase tracking-wider font-semibold">
+<i class="bi bi-check-circle-fill text-sm"></i> Blindagem contra a curva de esquecimento
+            </div>
+</div>
+</div>
+<!-- Card 05 -->
+<div class="journey-card-item shrink-0 px-unit-xs sm:px-unit-sm w-[90%] sm:w-[540px] md:w-[600px] lg:w-[640px] transition-all duration-500 opacity-40" data-step="4">
+<div class="h-full p-unit-xl lg:p-unit-2xl bg-surface-raised rounded-xl border border-surface-container-highest/60 shadow-xl flex flex-col justify-between min-h-[320px] relative overflow-hidden">
+<div class="flex items-baseline justify-between border-b border-surface-container-highest/60 pb-unit-md">
+<span class="font-stat-counter text-stat-counter text-gold-antique font-extrabold leading-none select-none text-[64px] lg:text-[80px] tracking-tighter">05</span>
+<span class="font-label-caps text-[12px] font-bold text-gold-muted px-unit-sm py-1 bg-surface-container rounded uppercase tracking-[0.14em]">ALINHAMENTO</span>
+</div>
+<div class="mt-unit-md space-y-unit-xs">
+<h3 class="font-headline-md text-headline-sm lg:text-headline-md text-text-primary tracking-tight font-bold uppercase">ENCONTRO SEMANAL</h3>
+<p class="font-body-lg text-body-md lg:text-body-lg text-text-secondary leading-relaxed">Participe dos encontros ao vivo diretamente com o Prof. Ricardo Ziegler para tirar dúvidas e refinar a estratégia.</p>
+</div>
+<div class="mt-unit-lg flex items-center gap-unit-xs text-xs font-label-caps text-gold-muted uppercase tracking-wider font-semibold">
+<i class="bi bi-check-circle-fill text-sm"></i> Acesso direto ao coordenador
+            </div>
+</div>
+</div>
+<!-- Card 06 -->
+<div class="journey-card-item shrink-0 px-unit-xs sm:px-unit-sm w-[90%] sm:w-[540px] md:w-[600px] lg:w-[640px] transition-all duration-500 opacity-40" data-step="5">
+<div class="h-full p-unit-xl lg:p-unit-2xl bg-surface-raised rounded-xl border border-surface-container-highest/60 shadow-xl flex flex-col justify-between min-h-[320px] relative overflow-hidden">
+<div class="flex items-baseline justify-between border-b border-surface-container-highest/60 pb-unit-md">
+<span class="font-stat-counter text-stat-counter text-gold-antique font-extrabold leading-none select-none text-[64px] lg:text-[80px] tracking-tighter">06</span>
+<span class="font-label-caps text-[12px] font-bold text-gold-muted px-unit-sm py-1 bg-surface-container rounded uppercase tracking-[0.14em]">PÓS-CICLO</span>
+</div>
+<div class="mt-unit-md space-y-unit-xs">
+<h3 class="font-headline-md text-headline-sm lg:text-headline-md text-text-primary tracking-tight font-bold uppercase">AJUSTE DE ROTA</h3>
+<p class="font-body-lg text-body-md lg:text-body-lg text-text-secondary leading-relaxed">Depois das 12 semanas, os estudos são reorganizados cirurgicamente conforme seus índices de acerto e necessidades reais.</p>
+</div>
+<div class="mt-unit-lg flex items-center gap-unit-xs text-xs font-label-caps text-gold-muted uppercase tracking-wider font-semibold">
+<i class="bi bi-check-circle-fill text-sm"></i> Aperfeiçoamento cirúrgico contínuo
+            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Step Indicator & Discrete Navigation Arrows -->
+<div class="mt-unit-xl flex items-center justify-center gap-unit-md sm:gap-unit-lg">
+<button aria-label="Etapa anterior" class="w-10 h-10 rounded-lg bg-surface-raised hover:bg-surface-card text-gold-antique border border-surface-container-highest/60 flex items-center justify-center transition-all duration-200 hover:scale-105 shadow-sm" id="journey-prev-btn">
+<i class="bi bi-arrow-left text-xl"></i>
+</button>
+<div class="inline-flex items-center gap-unit-xs sm:gap-unit-sm px-unit-md py-unit-xs bg-surface-raised rounded-lg border border-surface-container-highest/60 shadow-sm" id="journey-steps-nav">
+<button class="journey-step-btn px-unit-xs sm:px-unit-sm py-1 font-label-caps text-label-caps tracking-[0.14em] text-gold-bright font-bold border-b border-gold-antique transition-colors duration-200" data-index="0">01</button>
+<span class="text-text-muted text-xs select-none">—</span>
+<button class="journey-step-btn px-unit-xs sm:px-unit-sm py-1 font-label-caps text-label-caps tracking-[0.14em] text-text-muted hover:text-text-primary transition-colors duration-200 font-semibold" data-index="1">02</button>
+<span class="text-text-muted text-xs select-none">—</span>
+<button class="journey-step-btn px-unit-xs sm:px-unit-sm py-1 font-label-caps text-label-caps tracking-[0.14em] text-text-muted hover:text-text-primary transition-colors duration-200 font-semibold" data-index="2">03</button>
+<span class="text-text-muted text-xs select-none">—</span>
+<button class="journey-step-btn px-unit-xs sm:px-unit-sm py-1 font-label-caps text-label-caps tracking-[0.14em] text-text-muted hover:text-text-primary transition-colors duration-200 font-semibold" data-index="3">04</button>
+<span class="text-text-muted text-xs select-none">—</span>
+<button class="journey-step-btn px-unit-xs sm:px-unit-sm py-1 font-label-caps text-label-caps tracking-[0.14em] text-text-muted hover:text-text-primary transition-colors duration-200 font-semibold" data-index="4">05</button>
+<span class="text-text-muted text-xs select-none">—</span>
+<button class="journey-step-btn px-unit-xs sm:px-unit-sm py-1 font-label-caps text-label-caps tracking-[0.14em] text-text-muted hover:text-text-primary transition-colors duration-200 font-semibold" data-index="5">06</button>
+</div>
+<button aria-label="Próxima etapa" class="w-10 h-10 rounded-lg bg-surface-raised hover:bg-surface-card text-gold-antique border border-surface-container-highest/60 flex items-center justify-center transition-all duration-200 hover:scale-105 shadow-sm" id="journey-next-btn">
+<i class="bi bi-arrow-right text-xl"></i>
+</button>
+</div>
+<!-- Complementary Info Row: Horizontal Minimalist Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-unit-md mt-unit-2xl pt-unit-xl border-t border-surface-container-highest/60">
+<!-- 1 -->
+<div class="p-unit-lg bg-surface-raised rounded-xl border border-border-gold-subtle hover:border-gold-antique/30 transition-colors shadow-sm flex flex-col justify-between space-y-unit-sm">
+<div class="flex items-center gap-unit-xs text-gold-antique">
+<i class="bi bi-clock text-xl"></i>
+<h4 class="font-label-caps text-label-caps text-text-primary uppercase tracking-[0.08em] font-bold">APROX. 4H/DIA</h4>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">Referência média equilibrada para execução das missões sem exaustão.</p>
+</div>
+<!-- 2 -->
+<div class="p-unit-lg bg-surface-raised rounded-xl border border-border-gold-subtle hover:border-gold-antique/30 transition-colors shadow-sm flex flex-col justify-between space-y-unit-sm">
+<div class="flex items-center gap-unit-xs text-gold-antique">
+<i class="bi bi-person-badge text-xl"></i>
+<h4 class="font-label-caps text-label-caps text-text-primary uppercase tracking-[0.08em] font-bold">TRABALHA EM ESCALA?</h4>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">Existe orientação específica dentro da plataforma para policiais e plantonistas.</p>
+</div>
+<!-- 3 -->
+<div class="p-unit-lg bg-surface-raised rounded-xl border border-border-gold-subtle hover:border-gold-antique/30 transition-colors shadow-sm flex flex-col justify-between space-y-unit-sm">
+<div class="flex items-center gap-unit-xs text-gold-antique">
+<i class="bi bi-clipboard-check text-xl"></i>
+<h4 class="font-label-caps text-label-caps text-text-primary uppercase tracking-[0.08em] font-bold">SIMULADOS</h4>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">Entram pontualmente no momento adequado da preparação para aferição real.</p>
+</div>
+<!-- 4 -->
+<div class="p-unit-lg bg-surface-raised rounded-xl border border-border-gold-subtle hover:border-gold-antique/30 transition-colors shadow-sm flex flex-col justify-between space-y-unit-sm">
+<div class="flex items-center gap-unit-xs text-gold-antique">
+<i class="bi bi-play-circle text-xl"></i>
+<h4 class="font-label-caps text-label-caps text-text-primary uppercase tracking-[0.08em] font-bold">VIDEOAULAS</h4>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">Materiais predominantemente escritos; vídeos são pontuais e estratégicos.</p>
+</div>
+</div>
+</div>
+<script>
+    (function(){
+      const track = document.getElementById('journey-track');
+      const cards = document.querySelectorAll('.journey-card-item');
+      const stepBtns = document.querySelectorAll('.journey-step-btn');
+      const prevBtn = document.getElementById('journey-prev-btn');
+      const nextBtn = document.getElementById('journey-next-btn');
+      if(!track || !cards.length) return;
+      let activeIndex = 0;
+      const total = cards.length;
+
+      function updateJourney(index) {
+        activeIndex = (index + total) % total;
+        cards.forEach((card, i) => {
+          const inner = card.querySelector('div');
+          if(i === activeIndex) {
+            card.classList.remove('opacity-40');
+            card.classList.add('opacity-100');
+            if(inner) {
+              inner.classList.add('border-gold-antique/40');
+              inner.classList.remove('border-surface-container-highest/60');
+            }
+          } else {
+            card.classList.remove('opacity-100');
+            card.classList.add('opacity-40');
+            if(inner) {
+              inner.classList.remove('border-gold-antique/40');
+              inner.classList.add('border-surface-container-highest/60');
+            }
+          }
+        });
+        stepBtns.forEach((btn, i) => {
+          if(i === activeIndex) {
+            btn.classList.add('text-gold-bright', 'font-bold', 'border-b', 'border-gold-antique');
+            btn.classList.remove('text-text-muted');
+          } else {
+            btn.classList.remove('text-gold-bright', 'font-bold', 'border-b', 'border-gold-antique');
+            btn.classList.add('text-text-muted');
+          }
+        });
+        const activeCard = cards[activeIndex];
+        const trackWidth = track.parentElement.offsetWidth;
+        const cardWidth = activeCard.offsetWidth;
+        const cardOffset = activeCard.offsetLeft;
+        const targetScroll = cardOffset - (trackWidth - cardWidth) / 2;
+        track.style.transform = `translateX(-${Math.max(0, targetScroll)}px)`;
+      }
+
+      stepBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.getAttribute('data-index'), 10);
+          updateJourney(idx);
+        });
+      });
+      if(prevBtn) prevBtn.addEventListener('click', () => updateJourney(activeIndex - 1));
+      if(nextBtn) nextBtn.addEventListener('click', () => updateJourney(activeIndex + 1));
+      
+      let startX = 0;
+      let isDragging = false;
+      track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      }, {passive: true});
+      track.addEventListener('touchend', (e) => {
+        if(!isDragging) return;
+        isDragging = false;
+        const diffX = e.changedTouches[0].clientX - startX;
+        if(diffX > 40) updateJourney(activeIndex - 1);
+        else if(diffX < -40) updateJourney(activeIndex + 1);
+      });
+      window.addEventListener('resize', () => updateJourney(activeIndex));
+      setTimeout(() => updateJourney(0), 50);
+    })();
+  </script>
+</section>
+
+<!-- 06 — DISCIPLINAS (Bloco compacto em card único) -->
+<section class="w-full py-unit-3xl lg:py-unit-4xl bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="max-w-2xl mb-unit-2xl">
+<span class="font-label-caps text-label-caps text-gold-antique uppercase tracking-[0.14em] block mb-unit-xs font-bold">CONTEÚDO PROGRAMÁTICO</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-text-primary tracking-tight font-bold">O QUE VOCÊ VAI ESTUDAR</h2>
+</div>
+<!-- Clean 10-Discipline Grid -->
+<div class="bg-surface-raised rounded-xl p-unit-xl border border-surface-container-highest/60 shadow-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-unit-2xl gap-y-unit-sm divide-y md:divide-y-0 divide-surface-container-highest/60">
+<div class="space-y-unit-xs">
+<div class="flex items-center justify-between py-unit-xs border-b border-surface-container-highest/60">
+<span class="font-body-md text-text-primary font-medium">Língua Portuguesa</span>
+<span class="font-label-caps text-label-caps text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded font-bold">01</span>
+</div>
+<div class="flex items-center justify-between py-unit-xs border-b border-surface-container-highest/60">
+<span class="font-body-md text-text-primary font-medium">Direito Penal</span>
+<span class="font-label-caps text-label-caps text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded font-bold">02</span>
+</div>
+<div class="flex items-center justify-between py-unit-xs border-b border-surface-container-highest/60">
+<span class="font-body-md text-text-primary font-medium">Direito Processual Penal</span>
+<span class="font-label-caps text-label-caps text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded font-bold">03</span>
+</div>
+<div class="flex items-center justify-between py-unit-xs border-b border-surface-container-highest/60">
+<span class="font-body-md text-text-primary font-medium">Direito Constitucional</span>
+<span class="font-label-caps text-label-caps text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded font-bold">04</span>
+</div>
+<div class="flex items-center justify-between py-unit-xs">
+<span class="font-body-md text-text-primary font-medium">Direito Administrativo</span>
+<span class="font-label-caps text-label-caps text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded font-bold">05</span>
+</div>
+</div>
+<div class="space-y-unit-xs pt-unit-xs md:pt-0">
+<div class="flex items-center justify-between py-unit-xs border-b border-surface-container-highest/60">
+<span class="font-body-md text-text-primary font-medium">Direito Penal Militar</span>
+<span class="font-label-caps text-label-caps text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded font-bold">06</span>
+</div>
+<div class="flex items-center justify-between py-unit-xs border-b border-surface-container-highest/60">
+<span class="font-body-md text-text-primary font-medium">Direito Processual Penal Militar</span>
+<span class="font-label-caps text-label-caps text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded font-bold">07</span>
+</div>
+<div class="flex items-center justify-between py-unit-xs border-b border-surface-container-highest/60">
+<span class="font-body-md text-text-primary font-medium">Legislação Penal Especial</span>
+<span class="font-label-caps text-label-caps text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded font-bold">08</span>
+</div>
+<div class="flex items-center justify-between py-unit-xs border-b border-surface-container-highest/60">
+<span class="font-body-md text-text-primary font-medium">Realidade Geográfica e Cultural de Goiás</span>
+<span class="font-label-caps text-label-caps text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded font-bold">09</span>
+</div>
+<div class="flex items-center justify-between py-unit-xs">
+<span class="font-body-md text-text-primary font-medium">Legislação PMGO</span>
+<span class="font-label-caps text-label-caps text-gold-muted px-unit-xs py-unit-2xs bg-surface-container rounded font-bold">10</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-unit-xl p-unit-md bg-surface-container-low/40 rounded-lg text-center">
+<p class="font-body-md text-body-md text-text-secondary">
+        O conteúdo necessário para construir uma preparação competitiva para o CFO PMGO.
+      </p>
+</div>
+</div>
+</section>
+
+<!-- 08 — INVESTIMENTO / CONDIÇÃO ESPECIAL (Com R$ 797 à vista ou 6x R$ 144) -->
+<section class="w-full py-unit-3xl lg:py-unit-4xl bg-surface-container-lowest" id="oferta">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="max-w-3xl mx-auto text-center mb-unit-3xl">
+<span class="font-label-caps text-label-caps text-gold-antique uppercase tracking-[0.14em] block mb-unit-xs font-bold">CONDIÇÃO ESPECIAL</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-text-primary tracking-tight font-bold">SUA PREPARAÇÃO COMPLETA PARA O CFO PMGO</h2>
+<p class="mt-unit-xs font-body-md text-body-md text-text-secondary">Tudo o que você precisa para seguir uma rota estruturada de preparação.</p>
+</div>
+<!-- Main Offer Presentation Card -->
+<div class="max-w-5xl mx-auto bg-surface-raised rounded-xl p-unit-xl lg:p-unit-2xl shadow-2xl relative overflow-hidden ring-1 ring-gold-antique/30">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-unit-2xl items-center">
+<!-- Left Column: Items Included (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col justify-between space-y-unit-lg">
+<div>
+<div class="flex items-center gap-unit-xs mb-unit-md">
+<i class="bi bi-patch-check-fill text-gold-antique text-lg"></i>
+<span class="font-label-caps text-label-caps text-gold-antique uppercase tracking-[0.14em] font-bold">TUDO QUE ESTÁ INCLUÍDO</span>
+</div>
+<div class="divide-y divide-surface-container-highest/60">
+<!-- Item 1 -->
+<div class="py-unit-md flex items-center justify-between gap-unit-md">
+<div class="flex items-start gap-unit-sm">
+<i class="bi bi-mortarboard text-gold-antique text-lg mt-0.5"></i>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-bold">Curso + Mentoria</h4>
+<p class="font-body-sm text-body-sm text-text-secondary mt-unit-2xs">12 semanas de rota diária, direcionamento completo e encontros estratégicos</p>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted whitespace-nowrap text-right font-semibold">R$ 997</span>
+</div>
+<!-- Item 2 -->
+<div class="py-unit-md flex items-center justify-between gap-unit-md">
+<div class="flex items-start gap-unit-sm">
+<i class="bi bi-pencil-square text-gold-antique text-lg mt-0.5"></i>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-bold">Curso de Discursivas</h4>
+<p class="font-body-sm text-body-sm text-text-secondary mt-unit-2xs">Técnica, estrutura e repertório jurídico para a prova discursiva</p>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted whitespace-nowrap text-right font-semibold">R$ 329</span>
+</div>
+<!-- Item 3 -->
+<div class="py-unit-md flex items-center justify-between gap-unit-md">
+<div class="flex items-start gap-unit-sm">
+<i class="bi bi-hammer text-gold-antique text-lg mt-0.5"></i>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-bold">Curso de Direito Penal e Processo Penal Militar</h4>
+<p class="font-body-sm text-body-sm text-text-secondary mt-unit-2xs">Disciplinas nucleares da carreira lecionadas com foco cirúrgico</p>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted whitespace-nowrap text-right font-semibold">R$ 129</span>
+</div>
+<!-- Item 4 -->
+<div class="py-unit-md flex items-center justify-between gap-unit-md">
+<div class="flex items-start gap-unit-sm">
+<i class="bi bi-clipboard-check text-gold-antique text-lg mt-0.5"></i>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-bold">4 Simulados Inéditos + 4 Simulados com Gabaritos Comentados</h4>
+<p class="font-body-sm text-body-sm text-text-secondary mt-unit-2xs">8 simulados no padrão rigoroso de cobrança do CFO PMGO</p>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted whitespace-nowrap text-right font-semibold">R$ 297</span>
+</div>
+</div>
+</div>
+<div class="pt-unit-sm flex items-center gap-unit-xs text-text-muted font-body-sm text-body-sm">
+<i class="bi bi-lock-fill text-sm"></i>
+<span>Acesso individual e intransferível durante 12 meses.</span>
+</div>
+</div>
+<!-- Right Column: Commercial & Pricing Block (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container rounded-xl p-unit-xl flex flex-col justify-between shadow-lg relative ring-1 ring-gold-antique/20">
+<div class="text-center space-y-unit-sm pb-unit-lg">
+<!-- Price Breakdown -->
+<div class="flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-[0.14em] font-semibold">VALOR TOTAL</span>
+<span class="font-title-editorial text-title-editorial text-text-muted line-through mt-unit-2xs">R$ 1.752</span>
+</div>
+<!-- Saving Badge -->
+<div class="inline-flex items-center gap-unit-xs px-unit-md py-unit-2xs bg-primary-container text-gold-antique rounded-lg border border-gold-antique/20 shadow-sm">
+<i class="bi bi-piggy-bank text-sm"></i>
+<span class="font-label-caps text-label-caps uppercase tracking-[0.14em] font-bold">VOCÊ ECONOMIZA R$ 955</span>
+</div>
+<!-- Exclusive Group Window Notice -->
+<div class="space-y-unit-2xs pt-unit-xs">
+<span class="font-label-caps text-label-caps text-gold-muted uppercase tracking-[0.14em] block font-bold">OFERTA EXCLUSIVA PARA O GRUPO</span>
+<span class="font-body-sm text-body-sm text-text-secondary block font-medium">Válida do dia 08 ao dia 10</span>
+</div>
+<!-- Final Price Presentation (R$ 797 à vista ou 6x de R$ 144) -->
+<div class="pt-unit-sm">
+<span class="font-stat-counter text-stat-counter text-text-primary leading-none block font-extrabold">R$ 797</span>
+<span class="font-body-md text-body-md text-gold-antique font-semibold mt-unit-2xs block">à vista ou em 6x de R$ 144</span>
+<span class="font-body-sm text-body-sm text-text-muted block mt-1">(ou em até 12x no cartão de crédito)</span>
+</div>
+</div>
+<!-- Decision Reinforcement List -->
+<div class="space-y-unit-xs py-unit-md border-t border-b border-surface-container-highest/60 mb-unit-lg">
+<div class="flex items-center gap-unit-xs text-text-primary">
+<i class="bi bi-check-lg text-gold-antique text-base"></i>
+<span class="font-body-sm text-body-sm">Curso + Mentoria</span>
+</div>
+<div class="flex items-center gap-unit-xs text-text-primary">
+<i class="bi bi-check-lg text-gold-antique text-base"></i>
+<span class="font-body-sm text-body-sm">Preparação para discursiva e disciplinas militares</span>
+</div>
+<div class="flex items-center gap-unit-xs text-text-primary">
+<i class="bi bi-check-lg text-gold-antique text-base"></i>
+<span class="font-body-sm text-body-sm">8 simulados direcionados ao CFO PMGO</span>
+</div>
+</div>
+<!-- Checkout CTA Button -->
+<div class="space-y-unit-sm text-center">
+<a class="w-full py-unit-md bg-emerald-600 hover:bg-emerald-500 text-white font-label-caps text-label-caps tracking-[0.14em] uppercase rounded-lg shadow-[0_4px_20px_rgba(16,185,129,0.3)] transition-all duration-300 flex items-center justify-center gap-2 text-center font-bold hover:-translate-y-0.5" href="https://chk.eduzz.com/G92EQGJOWE">
+              QUERO GARANTIR MINHA VAGA  <i class="bi bi-arrow-right text-[1.2em]"></i>
+            </a>
+<p class="font-body-sm text-[12px] leading-tight text-text-muted text-center">
+              Condição especial válida por tempo limitado • Acesso imediato à plataforma
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 07 — BÔNUS (Com destaque e Mockup CFO FLIX laptop/smartphone) -->
+<section class="w-full py-unit-3xl lg:py-unit-4xl">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="max-w-2xl mb-unit-2xl">
+<span class="font-label-caps text-label-caps text-gold-antique uppercase tracking-[0.14em] block mb-unit-xs font-bold">INCLUSÕES ESPECIAIS</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-text-primary tracking-tight font-bold">BÔNUS DA PREPARAÇÃO</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-unit-xl items-stretch">
+<!-- Bônus 1: Preparação Discursiva (5 cols) -->
+<div class="lg:col-span-5 p-unit-xl bg-surface-raised rounded-xl flex flex-col justify-between shadow-sm border border-border-gold-subtle">
+<div>
+<div class="flex items-center gap-unit-sm mb-unit-sm">
+<i class="bi bi-pencil-square text-gold-antique text-2xl"></i>
+<span class="font-label-caps text-label-caps text-gold-antique uppercase font-bold">BÔNUS 01</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-unit-xs font-bold">CURSO DE PREPARAÇÃO PARA A DISCURSIVA</h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            Conteúdo destinado à preparação para a prova discursiva. Também haverá questões para treino ao longo das missões ao longo das semanas de estudo.
+          </p>
+</div>
+<div class="mt-unit-lg pt-unit-md border-t border-surface-container-highest/60">
+<span class="font-body-sm text-body-sm text-text-muted italic block">
+            Nota clara: Não haverá correção individualizada.
+          </span>
+</div>
+</div>
+<!-- Bônus 2: CFO FLIX com Mockup Laptop/Smartphone (7 cols) -->
+<div class="lg:col-span-7 p-unit-xl bg-surface-raised rounded-xl flex flex-col md:flex-row items-center gap-unit-lg shadow-xl border border-gold-antique/30 relative overflow-hidden group">
+<div class="absolute -right-10 -bottom-10 w-48 h-48 bg-gold-antique/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="w-full md:w-1/2 flex flex-col justify-between space-y-unit-sm z-10">
+<div>
+<div class="flex items-center gap-unit-sm mb-unit-xs">
+<i class="bi bi-play-circle text-gold-antique text-2xl"></i>
+<span class="font-label-caps text-label-caps text-gold-antique uppercase font-bold">BÔNUS 02</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-unit-xs font-bold">CFO FLIX</h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+              Acesso exclusivo à plataforma CFO FLIX, contendo gravações estratégicas e acervo complementar para reforçar a fixação dos tópicos de maior peso da carreira.
+            </p>
+</div>
+<div class="pt-unit-xs">
+<span class="inline-flex items-center gap-unit-2xs text-xs font-label-caps text-gold-antique uppercase tracking-wider font-bold bg-primary-container px-unit-xs py-1 rounded">
+<i class="bi bi-check-lg text-sm"></i>
+              Incluso para a turma pré-edital
+            </span>
+</div>
+</div>
+<!-- Mockup Visual -->
+<div class="w-full md:w-1/2 flex items-center justify-center relative z-10">
+<div class="relative w-full max-w-[340px] transform group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_15px_25px_rgba(0,0,0,0.7)]">
+<img alt="Plataforma CFO FLIX no laptop e smartphone com Professor Ricardo Ziegler" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvWrWKhc0VFFHR4lSwT1UUjjQg1MO8D6qhB3_tpBbk0Atuhs7RhRrQ0gwhCpkKEQoTaGGen51BfrGMfq-1M0tvtKglXdnsqimfIuC3HmuiuZUmC7JnuNFx_jWoRo5SiW-t7RMlMwA9M2Y-b6rvMSnDtn8d8lbti-cjCJIzxig5FzIYHqkMC96MNHJqbZdm9UzrIEvLfGgJqQRRt5jZLUZjZhQ0h2Fd4Mqjc85P2wwUnohYWKe5tYM4C_FWdMh0NvpziQ">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 05 — ACOMPANHAMENTO + COMUNIDADE -->
+<section class="w-full py-unit-3xl lg:py-unit-4xl">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="text-center max-w-3xl mx-auto mb-unit-3xl">
+<span class="font-label-caps text-label-caps text-gold-antique uppercase tracking-[0.14em] block mb-unit-xs font-bold">SUPORTE TÁTICO • CORPO DE ALUNOS</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-text-primary tracking-tight font-bold">VOCÊ NÃO VAI FAZER ESSA PREPARAÇÃO SOZINHO</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-xl">
+<!-- Bloco 1: Encontros com Ricardo Ziegler -->
+<div class="p-unit-xl lg:p-unit-2xl bg-surface-raised rounded-xl flex flex-col justify-between shadow-md relative overflow-hidden border border-border-gold-subtle">
+<div class="space-y-unit-md">
+<div class="inline-flex items-center gap-unit-xs px-unit-sm py-unit-2xs bg-primary-container text-gold-antique rounded text-xs font-label-caps uppercase tracking-wider font-bold">
+<i class="bi bi-award text-sm"></i>
+            Liderança Direta
+          </div>
+<h3 class="font-headline-md text-headline-sm lg:text-headline-md text-text-primary font-bold">ENCONTROS COM RICARDO ZIEGLER</h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            A preparação não será delegada a um mentor auxiliar ou monitor acadêmico. O próprio Prof. Ricardo Ziegler estará presente e conduzirá os encontros semanais.
+          </p>
+</div>
+<div class="mt-unit-xl pt-unit-md bg-surface-container/60 p-unit-md rounded-lg">
+<p class="font-label-md text-label-md text-gold-antique font-semibold flex items-center gap-unit-xs">
+<i class="bi bi-check-circle-fill text-lg"></i>
+            Contato direto com quem construiu o método.
+          </p>
+</div>
+</div>
+<!-- Bloco 2: Grupo Exclusivo -->
+<div class="p-unit-xl lg:p-unit-2xl bg-surface-raised rounded-xl flex flex-col justify-between shadow-md relative overflow-hidden border border-border-gold-subtle">
+<div class="space-y-unit-md">
+<div class="inline-flex items-center gap-unit-xs px-unit-sm py-unit-2xs bg-surface-container text-text-primary rounded text-xs font-label-caps uppercase tracking-wider font-bold">
+<i class="bi bi-chat text-sm"></i>
+            Camaradagem • Irmãos de Farda
+          </div>
+<h3 class="font-headline-md text-headline-sm lg:text-headline-md text-text-primary font-bold">GRUPO EXCLUSIVO</h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            Os alunos estarão reunidos em um grupo exclusivo do Telegram com outras pessoas que vivem rigorosamente a mesma preparação e desafios diários. É um espaço sério de convivência entre candidatos que podem futuramente se tornar irmãos de farda na academia.
+          </p>
+</div>
+<div class="mt-unit-xl pt-unit-md bg-surface-container/60 p-unit-md rounded-lg">
+<p class="font-label-md text-label-md text-text-muted font-semibold flex items-center gap-unit-xs">
+<i class="bi bi-info-circle text-lg"></i>
+            A participação no Telegram é obrigatória.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 09 — QUEM É RICARDO ZIEGLER (Com foto oficial enviada) -->
+<section class="w-full py-unit-3xl lg:py-unit-4xl bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-unit-2xl items-center">
+<!-- Coluna de Imagem oficial -->
+<div class="lg:col-span-5">
+<div class="relative rounded-xl overflow-hidden bg-surface-container shadow-2xl border border-border-gold-subtle">
+<img alt="Prof. Ricardo Ziegler - Oficial da PMDF e aprovado em 1º lugar no CFO PMDF" class="w-full h-auto object-cover max-h-[580px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUlYhUeoWhqjUAdDUgGuha__h1vpIuhGcNuHW9sHGU_b5ojvNLaKydmEkrqpHAYIBoODX3Zc4Lqlwlz87N-THxFSRWhQaL2Ous0oPt58i5Xna3Ab2kNgBfKEVF8qQ08wgMASPLv0URnf77HZAp9xBiCZGZJtVnQhy9Nd8tcnG36eR9Om5BlCNC0ko65UrKlEmwUrareP6M1qmF39s8hYgQ-hwgL8W25HcULGDvyRgAp_1iMcHPOydtgUQ613eolAB_1g">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 p-unit-md bg-surface-base/90 backdrop-blur-md rounded-lg border border-gold-antique/20">
+<span class="font-label-caps text-label-caps text-gold-antique uppercase block font-bold">COORDENADOR E MENTOR</span>
+<p class="font-title-editorial text-title-editorial text-text-primary font-bold">Prof. Ricardo Ziegler</p>
+</div>
+</div>
+</div>
+<!-- Coluna de Texto e Narrativa -->
+<div class="lg:col-span-7 space-y-unit-lg">
+<div>
+<span class="font-label-caps text-label-caps text-gold-antique uppercase tracking-[0.14em] block mb-unit-xs font-bold">QUEM ESTÁ POR TRÁS DO MÉTODO</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-text-primary tracking-tight font-bold">PROF. RICARDO ZIEGLER</h2>
+<div class="inline-flex items-center gap-unit-xs mt-unit-xs px-unit-sm py-unit-2xs bg-primary-container text-gold-bright rounded">
+<i class="bi bi-stars text-sm"></i>
+<span class="font-label-caps text-label-caps tracking-wider uppercase font-bold">Oficial da PMDF • 1º Lugar no CFO PMDF</span>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-text-secondary leading-relaxed">
+
+
+Eu sou Professor Ricardo Ziegler desde 2022 especialista nas Carreiras de Oficial da Polícia Militar, desde meu primeiro lugar em 2017 me dedico à mentorias para o Oficialato. <br/> <br/>
+Recentemente mais de 135 alunos avançaram no CFO PMDF 2026, desde pessoas que já eram soldados a pessoas comuns, que tinham que dividir a rotina de escala ou pesada com o sonho de se tornarem Comandantes. <br/> <br/>
+Essa forma de estudar que vocês terão acesso é algo que levarão para a vida e vai te ensinar a estudar de verdade, assim como fez a diferença na minha vida e dos meus alunos, fará a diferença na sua também.</p>
+<!-- Quote Block Visual -->
+<div class="p-unit-lg bg-surface-raised rounded-xl border border-gold-antique/20">
+<p class="font-title-editorial text-title-editorial text-gold-bright italic font-semibold">
+            "Não era sobre estudar o dia inteiro. Era sobre estudar melhor com o tempo disponível."
+          </p>
+<span class="block mt-unit-xs font-label-caps text-label-caps text-text-muted uppercase tracking-[0.14em] font-semibold">
+            — Prof. Ricardo Ziegler
+          </span>
+</div>
+<div class="pt-unit-md">
+<a class="inline-flex items-center justify-center gap-2 px-unit-2xl py-unit-md bg-gold-antique hover:bg-gold-bright text-surface-base font-label-caps text-label-caps tracking-[0.14em] uppercase rounded-lg shadow-[0_4px_16px_rgba(197,160,89,0.2)] transition-all duration-300 hover:-translate-y-0.5 font-bold" href="#oferta">
+            QUERO GARANTIR MINHA VAGA <i class="bi bi-arrow-right text-[1.2em]"></i>
+          </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10 — FAQ + ATENDIMENTO -->
+<section class="w-full py-unit-3xl lg:py-unit-4xl">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="max-w-2xl mx-auto text-center mb-unit-3xl">
+<span class="font-label-caps text-label-caps text-gold-antique uppercase tracking-[0.14em] block mb-unit-xs font-bold">ESCLARECIMENTOS</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-text-primary tracking-tight font-bold">DÚVIDAS FREQUENTES</h2>
+</div>
+<!-- Accordion Grid -->
+<div class="max-w-3xl mx-auto space-y-unit-xs" id="faq-accordion">
+<!-- Item 1 -->
+<div class="bg-surface-raised rounded-lg overflow-hidden transition-colors border border-surface-container-highest/60">
+<button class="faq-toggle w-full p-unit-lg flex items-center justify-between text-left text-text-primary font-headline-sm text-title-editorial gap-unit-md font-bold">
+<span>Quanto tempo dura a mentoria?</span>
+<i class="bi bi-chevron-down transition-transform duration-200 text-gold-antique shrink-0"></i>
+</button>
+<div class="faq-content hidden px-unit-lg pb-unit-lg font-body-md text-body-md text-text-secondary">
+          12 semanas.
+        </div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-raised rounded-lg overflow-hidden transition-colors border border-surface-container-highest/60">
+<button class="faq-toggle w-full p-unit-lg flex items-center justify-between text-left text-text-primary font-headline-sm text-title-editorial gap-unit-md font-bold">
+<span>Por quanto tempo tenho acesso?</span>
+<i class="bi bi-chevron-down transition-transform duration-200 text-gold-antique shrink-0"></i>
+</button>
+<div class="faq-content hidden px-unit-lg pb-unit-lg font-body-md text-body-md text-text-secondary">
+          12 meses a partir da matrícula.
+        </div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-raised rounded-lg overflow-hidden transition-colors border border-surface-container-highest/60">
+<button class="faq-toggle w-full p-unit-lg flex items-center justify-between text-left text-text-primary font-headline-sm text-title-editorial gap-unit-md font-bold">
+<span>Quantas horas preciso estudar por dia?</span>
+<i class="bi bi-chevron-down transition-transform duration-200 text-gold-antique shrink-0"></i>
+</button>
+<div class="faq-content hidden px-unit-lg pb-unit-lg font-body-md text-body-md text-text-secondary">
+          A referência é de aproximadamente 4 horas.
+        </div>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-raised rounded-lg overflow-hidden transition-colors border border-surface-container-highest/60">
+<button class="faq-toggle w-full p-unit-lg flex items-center justify-between text-left text-text-primary font-headline-sm text-title-editorial gap-unit-md font-bold">
+<span>Trabalho em escala. Consigo acompanhar?</span>
+<i class="bi bi-chevron-down transition-transform duration-200 text-gold-antique shrink-0"></i>
+</button>
+<div class="faq-content hidden px-unit-lg pb-unit-lg font-body-md text-body-md text-text-secondary">
+          Sim. Existe orientação específica dentro da plataforma.
+        </div>
+</div>
+<!-- Item 5 -->
+<div class="bg-surface-raised rounded-lg overflow-hidden transition-colors border border-surface-container-highest/60">
+<button class="faq-toggle w-full p-unit-lg flex items-center justify-between text-left text-text-primary font-headline-sm text-title-editorial gap-unit-md font-bold">
+<span>Tem videoaula?</span>
+<i class="bi bi-chevron-down transition-transform duration-200 text-gold-antique shrink-0"></i>
+</button>
+<div class="faq-content hidden px-unit-lg pb-unit-lg font-body-md text-body-md text-text-secondary">
+          Em regra, os materiais são escritos. Quando necessário, haverá aulas em vídeo.
+        </div>
+</div>
+<!-- Item 6 -->
+<div class="bg-surface-raised rounded-lg overflow-hidden transition-colors border border-surface-container-highest/60">
+<button class="faq-toggle w-full p-unit-lg flex items-center justify-between text-left text-text-primary font-headline-sm text-title-editorial gap-unit-md font-bold">
+<span>Haverá simulados?</span>
+<i class="bi bi-chevron-down transition-transform duration-200 text-gold-antique shrink-0"></i>
+</button>
+<div class="faq-content hidden px-unit-lg pb-unit-lg font-body-md text-body-md text-text-secondary">
+          Sim. Eles serão inseridos no momento adequado da preparação.
+        </div>
+</div>
+<!-- Item 7 -->
+<div class="bg-surface-raised rounded-lg overflow-hidden transition-colors border border-surface-container-highest/60">
+<button class="faq-toggle w-full p-unit-lg flex items-center justify-between text-left text-text-primary font-headline-sm text-title-editorial gap-unit-md font-bold">
+<span>Preciso comprar outros cursos?</span>
+<i class="bi bi-chevron-down transition-transform duration-200 text-gold-antique shrink-0"></i>
+</button>
+<div class="faq-content hidden px-unit-lg pb-unit-lg font-body-md text-body-md text-text-secondary">
+          Não.
+        </div>
+</div>
+<!-- Item 8 -->
+<div class="bg-surface-raised rounded-lg overflow-hidden transition-colors border border-surface-container-highest/60">
+<button class="faq-toggle w-full p-unit-lg flex items-center justify-between text-left text-text-primary font-headline-sm text-title-editorial gap-unit-md font-bold">
+<span>Preciso de plataforma de questões?</span>
+<i class="bi bi-chevron-down transition-transform duration-200 text-gold-antique shrink-0"></i>
+</button>
+<div class="faq-content hidden px-unit-lg pb-unit-lg font-body-md text-body-md text-text-secondary">
+          Sim. TecConcursos, QConcursos ou equivalente precisa ser contratado separadamente.
+        </div>
+</div>
+<!-- Item 9 -->
+<div class="bg-surface-raised rounded-lg overflow-hidden transition-colors border border-surface-container-highest/60">
+<button class="faq-toggle w-full p-unit-lg flex items-center justify-between text-left text-text-primary font-headline-sm text-title-editorial gap-unit-md font-bold">
+<span>Existe preparação para discursiva?</span>
+<i class="bi bi-chevron-down transition-transform duration-200 text-gold-antique shrink-0"></i>
+</button>
+<div class="faq-content hidden px-unit-lg pb-unit-lg font-body-md text-body-md text-text-secondary">
+          Sim.
+        </div>
+</div>
+<!-- Item 10 -->
+<div class="bg-surface-raised rounded-lg overflow-hidden transition-colors border border-surface-container-highest/60">
+<button class="faq-toggle w-full p-unit-lg flex items-center justify-between text-left text-text-primary font-headline-sm text-title-editorial gap-unit-md font-bold">
+<span>Existe correção individual da discursiva?</span>
+<i class="bi bi-chevron-down transition-transform duration-200 text-gold-antique shrink-0"></i>
+</button>
+<div class="faq-content hidden px-unit-lg pb-unit-lg font-body-md text-body-md text-text-secondary">
+          Não.
+        </div>
+</div>
+<!-- Item 11 -->
+<div class="bg-surface-raised rounded-lg overflow-hidden transition-colors border border-surface-container-highest/60">
+<button class="faq-toggle w-full p-unit-lg flex items-center justify-between text-left text-text-primary font-headline-sm text-title-editorial gap-unit-md font-bold">
+<span>O curso Reta Final está incluído?</span>
+<i class="bi bi-chevron-down transition-transform duration-200 text-gold-antique shrink-0"></i>
+</button>
+<div class="faq-content hidden px-unit-lg pb-unit-lg font-body-md text-body-md text-text-secondary">
+          Não.
+        </div>
+</div>
+<!-- Item 12 -->
+<div class="bg-surface-raised rounded-lg overflow-hidden transition-colors border border-surface-container-highest/60">
+<button class="faq-toggle w-full p-unit-lg flex items-center justify-between text-left text-text-primary font-headline-sm text-title-editorial gap-unit-md font-bold">
+<span>Posso renovar depois dos 12 meses?</span>
+<i class="bi bi-chevron-down transition-transform duration-200 text-gold-antique shrink-0"></i>
+</button>
+<div class="faq-content hidden px-unit-lg pb-unit-lg font-body-md text-body-md text-text-secondary">
+          Sim. Alunos possuem 50% de desconto na renovação pré-edital.
+        </div>
+</div>
+<!-- Item 13 -->
+<div class="bg-surface-raised rounded-lg overflow-hidden transition-colors border border-surface-container-highest/60">
+<button class="faq-toggle w-full p-unit-lg flex items-center justify-between text-left text-text-primary font-headline-sm text-title-editorial gap-unit-md font-bold">
+<span>O Telegram é obrigatório?</span>
+<i class="bi bi-chevron-down transition-transform duration-200 text-gold-antique shrink-0"></i>
+</button>
+<div class="faq-content hidden px-unit-lg pb-unit-lg font-body-md text-body-md text-text-secondary">
+          Sim.
+        </div>
+</div>
+</div>
+<!-- Atendimento WhatsApp CTA -->
+<div class="mt-unit-3xl max-w-2xl mx-auto p-unit-xl bg-surface-container rounded-xl text-center space-y-unit-md shadow-md border border-border-gold-subtle">
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">AINDA FICOU COM ALGUMA DÚVIDA?</h3>
+<p class="font-body-md text-body-md text-text-secondary">
+        Nossa equipe de coordenação está pronta para responder suas dúvidas sobre o cronograma, materiais e rotina da mentoria.
+      </p>
+<div>
+<a class="inline-flex items-center gap-unit-xs px-unit-xl py-unit-sm bg-surface-base hover:bg-surface-card text-gold-bright font-label-caps text-label-caps uppercase tracking-[0.14em] rounded-lg transition-all duration-200 shadow-sm border border-gold-antique/30 font-bold" href="https://wa.me/5555619841977">
+<i class="bi bi-chat-fill text-lg"></i>
+          FALAR COM NOSSA EQUIPE
+        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Scripts -->
+<script>
+  // FAQ Accordion logic
+  document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('.bi-chevron-down');
+      const isOpen = !content.classList.contains('hidden');
+      
+      document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('.faq-toggle .bi-chevron-down').forEach(i => i.style.transform = 'rotate(0deg)');
+
+      if (!isOpen) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+
+  // Feedback Carousel logic
+  const fbCarousel = document.getElementById('feedback-carousel');
+  const fbPrev = document.getElementById('fb-prev');
+  const fbNext = document.getElementById('fb-next');
+
+  if (fbCarousel && fbPrev && fbNext) {
+    fbPrev.addEventListener('click', () => {
+      fbCarousel.scrollBy({ left: -380, behavior: 'smooth' });
+    });
+    fbNext.addEventListener('click', () => {
+      fbCarousel.scrollBy({ left: 380, behavior: 'smooth' });
+    });
+  }
+</script>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest border-t border-surface-container-highest/60">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop py-unit-3xl">
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-unit-2xl mb-unit-2xl">
+<div class="max-w-md space-y-unit-sm">
+<div class="flex items-center gap-unit-xs">
+<span class="font-headline-sm text-headline-sm text-text-primary uppercase font-bold">
+<span class="text-gold-antique">CFO</span> PMGO
+          </span>
+<span class="font-label-caps text-label-caps text-text-muted uppercase font-semibold">| Pré-Edital</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+          Preparação jurídica e estratégica de alta patente para o Concurso de Oficiais da Polícia Militar do Estado de Goiás. Excelência, autoridade institucional e disciplina tática.
+        </p>
+<span class="inline-block font-label-caps text-label-caps text-gold-muted uppercase tracking-[0.14em] font-bold">Coordenação: Prof. Ricardo Ziegler</span>
+</div>
+<div class="grid grid-cols-2 gap-unit-2xl">
+<div class="space-y-unit-sm">
+<span class="block font-label-caps text-label-caps text-gold-antique uppercase font-bold">Estrutura</span>
+<ul class="space-y-unit-xs">
+<li class="font-body-sm text-body-sm text-text-secondary hover:text-on-surface transition-colors cursor-pointer">Edital Verticalizado</li>
+<li class="font-body-sm text-body-sm text-text-secondary hover:text-on-surface transition-colors cursor-pointer">Cronograma Tático</li>
+<li class="font-body-sm text-body-sm text-text-secondary hover:text-on-surface transition-colors cursor-pointer">Simulados Comentados</li>
+</ul>
+</div>
+<div class="space-y-unit-sm">
+<span class="block font-label-caps text-label-caps text-gold-antique uppercase font-bold">Institucional</span>
+<ul class="space-y-unit-xs">
+<li><a class="font-body-sm text-body-sm text-text-secondary hover:text-on-surface transition-colors" data-path="termos-de-uso" href="#">Termos de Uso</a></li>
+<li><a class="font-body-sm text-body-sm text-text-secondary hover:text-on-surface transition-colors" data-path="politica-de-privacidade" href="#">Privacidade</a></li>
+<li><a class="font-body-sm text-body-sm text-text-secondary hover:text-on-surface transition-colors" data-path="matricula-e-planos" href="#">Canal de Atendimento</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="pt-unit-lg bg-surface-container-low/30 rounded-lg p-unit-md flex flex-col md:flex-row items-center justify-between gap-unit-md border border-surface-container-highest/30">
+<p class="font-body-sm text-body-sm text-text-muted text-center md:text-left">
+        © 2024 Prof. Ricardo Ziegler. Todos os direitos reservados. Preparatório CFO PMGO.
+      </p>
+<div class="flex items-center gap-unit-lg">
+<a class="font-body-sm text-body-sm text-text-muted hover:text-gold-antique transition-colors" data-path="politica-de-privacidade" href="#">Política de Privacidade</a>
+<a class="font-body-sm text-body-sm text-text-muted hover:text-gold-antique transition-colors" data-path="termos-de-uso" href="#">Termos de Uso</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
